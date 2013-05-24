@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-use strict;
+use 5.16.0;
 use warnings;
 
 use JSON qw( encode_json );
@@ -24,4 +24,8 @@ for my $filename (@ARGV) {
         });
 }
 
-print encode_json(\@plugins);
+say '[%- SET plugins = [';
+for my $plugin (@plugins) {
+    say qq(\t{ name => "$plugin->{name}", url => "$plugin->{url}" },);
+}
+say '] -%]';

@@ -2,13 +2,24 @@
 <html>
 <head>
 <title>Search</title>
-<script>
-var plugins = [%- INCLUDE plugins.json -%];
+<script type="text/javascript">
+function onClick() {
+    var template = document.getElementById('plugins').value;
+    var query = document.getElementById('query').value;
+    var uri = template.replace(/{searchTerms}/g, encodeURIComponent(query));
+    document.location = uri;
+}
 </script>
 </head>
 
 <body>
-<input type="text" />
-<button type="button">Search</button>
+<input type="text" id="query" />
+<button type="button" onClick="onClick()">Search</button>
+<select id="plugins">
+    [%- PROCESS plugins.tt2 -%]
+    [%- FOR plugin IN plugins %]
+        <option value="[% plugin.url %]">[% plugin.name %]</option>
+    [%- END -%]
+</select>
 </body>
 </html>
