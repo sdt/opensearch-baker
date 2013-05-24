@@ -1,0 +1,3 @@
+#!/bin/sh
+
+curl -L "http://mycroftproject.com/search-engines.html?name=$1"

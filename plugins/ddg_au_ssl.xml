@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <!-- Created on Thu, 23 Feb 2012 01:14:31 GMT -->
+  <ShortName>DuckDuckGo AU SSL</ShortName>
+  <Description>DuckDuckGo AU HTTPS NoSafe</Description>
+  <Url type="text/html" method="get" template="https://duckduckgo.com/?q={searchTerms}&amp;kp=-1&amp;kl=au-en&amp;kh=1"/>
+  <Image width="16" height="16">http://mycroftproject.com/updateos.php/id0/ddg_au_ssl.ico</Image>
+  <Developer>Anon</Developer>
+  <InputEncoding>UTF-8</InputEncoding>
+  <moz:SearchForm>https://duckduckgo.com/</moz:SearchForm>
+  <Url type="application/opensearchdescription+xml" rel="self" template="http://mycroftproject.com/updateos.php/id0/ddg_au_ssl.xml"/>
+</OpenSearchDescription>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <!-- Created on Mon, 12 Sep 2011 05:12:25 GMT -->
+  <ShortName>Google AU SSL (no SafeSearch)</ShortName>
+  <Description>Google SSL no filter</Description>
+  <Url type="text/html" method="get" template="https://encrypted.google.com/search?hl=en&amp;gl=au&amp;safe=off&amp;q={searchTerms}&amp;btnG=Search&amp;aq=f&amp;aqi=&amp;aql=&amp;oq={searchTerms}&amp;gs_rfai="/>
+  <Url type="application/x-suggestions+json" template="https://clients1.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=en&amp;q={searchTerms}"/>
+  <Image width="16" height="16">http://mycroftproject.com/updateos.php/id0/googlessl_au_nosafe.ico</Image>
+  <Developer>Anon</Developer>
+  <InputEncoding>UTF-8</InputEncoding>
+  <moz:SearchForm>https://encrypted.google.com/</moz:SearchForm>
+  <Url type="application/opensearchdescription+xml" rel="self" template="http://mycroftproject.com/updateos.php/id0/googlessl_au_nosafe.xml"/>
+</OpenSearchDescription>

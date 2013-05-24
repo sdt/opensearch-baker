@@ -1,0 +1,4 @@
+#!/bin/sh
+
+OUT=plugins
+curl -L "http://mycroftproject.com/updateos.php/id0/$1.xml" > "$OUT/$1.xml"

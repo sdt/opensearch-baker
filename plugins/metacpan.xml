@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <!-- Created on Mon, 06 Jun 2011 18:07:09 GMT -->
+  <ShortName>MetaCPAN</ShortName>
+  <Description>Modern search interface for CPAN with preview snippets</Description>
+  <Url type="text/html" method="get" template="http://beta.metacpan.org/search?q={searchTerms}"/>
+  <Contact>tmetro+mycroft@tommetro.com</Contact>
+  <Image width="16" height="16">http://mycroftproject.com/updateos.php/id0/metacpan.ico</Image>
+  <Developer>Tom Metro</Developer>
+  <InputEncoding>UTF-8</InputEncoding>
+  <moz:SearchForm>http://beta.metacpan.org/</moz:SearchForm>
+  <Url type="application/opensearchdescription+xml" rel="self" template="http://mycroftproject.com/updateos.php/id0/metacpan.xml"/>
+</OpenSearchDescription>

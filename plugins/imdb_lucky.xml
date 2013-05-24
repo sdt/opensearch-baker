@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <!-- Created on Thu, 08 Mar 2012 14:57:23 GMT -->
+  <ShortName>IMDb - Google Lucky</ShortName>
+  <Description>IMDb - The Internet Movie Database - without  asking which obvious choice you want</Description>
+  <Url type="text/html" method="get" template="http://www.google.com/search?ie=utf8&amp;oe=utf8&amp;q=site%3Aimdb.com+{searchTerms}&amp;btnI=I'm+Feeling+Lucky"/>
+  <Url type="application/x-suggestions+json" template="http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=en&amp;q={searchTerms}"/>
+  <Image width="16" height="16">http://mycroftproject.com/updateos.php/id0/imdb_lucky.ico</Image>
+  <Developer>BlackEyedFish</Developer>
+  <InputEncoding>UTF-8</InputEncoding>
+  <moz:SearchForm>http://www.imdb.com/Find</moz:SearchForm>
+  <Url type="application/opensearchdescription+xml" rel="self" template="http://mycroftproject.com/updateos.php/id0/imdb_lucky.xml"/>
+</OpenSearchDescription>

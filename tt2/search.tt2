@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Search</title>
+<script>
+var plugins = [%- INCLUDE plugins.json -%];
+</script>
+</head>
+
+<body>
+<input type="text" />
+<button type="button">Search</button>
+</body>
+</html>

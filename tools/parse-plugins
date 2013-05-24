@@ -1,0 +1,27 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+use JSON qw( encode_json );
+use XML::Simple qw( XMLin );
+
+my @plugins;
+for my $filename (@ARGV) {
+    my $plugin = XMLin($filename, ForceArray => [qw( Url )] );
+
+    my $name = $plugin->{ShortName};
+    my ($url) = grep { $_->{type} eq 'text/html' } @{ $plugin->{Url} };
+
+    die "No text/html url found in $filename"
+        unless $url;
+
+    die "Method \"$url->{method}\" not yet supported in $filename"
+        unless $url->{method} eq 'get';
+
+    push(@plugins, {
+            name => $name,
+            url  => $url->{template},
+        });
+}
+
+print encode_json(\@plugins);
