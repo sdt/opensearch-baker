@@ -1,59 +1,29 @@
+[%- PROCESS plugins.tt2 -%]
 <!DOCTYPE html>
 <html>
 <head>
 <title>Search</title>
 <script type="text/javascript">
 
-function setCookie(name, value, days) {
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        var expires = "; expires=" + date.toGMTString();
-    }
-    else var expires = "";
-    document.cookie = name + "=" + value + expires + "; path=/";
-}
+var template = [
+[%- FOR plugin IN plugins %]
+    "[% plugin.url %]",
+[%- END %]
+];
 
-function getCookie(name) {
-    if (document.cookie.length > 0) {
-        var start = document.cookie.indexOf(name + "=");
-        if (start != -1) {
-            var start = start + name.length + 1;
-            var end = document.cookie.indexOf(";", start);
-            if (end == -1) {
-                end = document.cookie.length;
-            }
-            return unescape(document.cookie.substring(start, end));
-        }
-    }
-    return "";
-}
-
-function onClick() {
-    var plugins = document.getElementById('plugins');
-    var template = plugins.value;
-    var query = document.getElementById('query').value;
-    var uri = template.replace(/{searchTerms}/g, encodeURIComponent(query));
-    setCookie('last_plugin', plugins.selectedIndex, 365);
-    document.location = uri;
-}
-
-window.onload = function() {
-    var plugins = document.getElementById('plugins');
-    plugins.selectedIndex = parseInt(getCookie('last_plugin'));
+function onClick(index) {
+    var query = encodeURIComponent(document.getElementById('query').value);
+    var uri = template[index].replace(/{searchTerms}/g, query);
+    alert(uri);
 }
 
 </script>
 </head>
 
 <body>
-<input type="search" id="query" />
-<button type="button" onClick="onClick()">Search</button>
-<select id="plugins">
-    [%- PROCESS plugins.tt2 -%]
-    [%- FOR plugin IN plugins %]
-        <option value="[% plugin.url %]">[% plugin.name %]</option>
-    [%- END -%]
-</select>
+<input type="search" id="query" width="100%" />
+[%- FOR plugin IN plugins %]
+<div onclick="onClick([% loop.index %])">[% plugin.name %]</div>
+[%- END -%]
 </body>
 </html>
