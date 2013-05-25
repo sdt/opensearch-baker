@@ -2,7 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width user-scalable=no" />
 <title>Search</title>
+<style>
+
+[% INCLUDE css/style.css -%]
+
+</style>
 <script type="text/javascript">
 
 var template = [
@@ -14,7 +20,7 @@ var template = [
 function onClick(index) {
     var query = encodeURIComponent(document.getElementById('query').value);
     var uri = template[index].replace(/{searchTerms}/g, query);
-    alert(uri);
+    document.location = uri;
 }
 
 </script>
@@ -23,7 +29,7 @@ function onClick(index) {
 <body>
 <input type="search" id="query" width="100%" />
 [%- FOR plugin IN plugins %]
-<div onclick="onClick([% loop.index %])">[% plugin.name %]</div>
+<button onclick="onClick([% loop.index %])">[% plugin.name %]</button>
 [%- END -%]
 </body>
 </html>

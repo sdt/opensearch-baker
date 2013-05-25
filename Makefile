@@ -1,4 +1,4 @@
-search.html:	tt2/search.tt2 plugins.tt2
+search.html:	tt2/search.tt2 css/style.css plugins.tt2
 	tpage tt2/search.tt2 > search.html
 
 plugins.tt2:	plugins/* tools/parse-plugins
