@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <!-- Created on Fri, 24 May 2013 21:08:25 GMT -->
+  <ShortName>TMDb</ShortName>
+  <Description>The Movie Database</Description>
+  <Url type="text/html" method="get" template="http://www.themoviedb.org/search?query={searchTerms}"/>
+  <Url type="application/x-suggestions+json" template="http://www.themoviedb.org/search/suggest?query={searchTerms}"/>
+  <Image width="16" height="16">http://mycroftproject.com/updateos.php/id0/38136.ZZZZ</Image>
+  <Developer>Travis Bell</Developer>
+  <InputEncoding>UTF-8</InputEncoding>
+  <moz:SearchForm>http://www.themoviedb.org/</moz:SearchForm>
+  <Url type="application/opensearchdescription+xml" rel="self" template="http://mycroftproject.com/updateos.php/id0/38136.xml"/>
+</OpenSearchDescription>
