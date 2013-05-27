@@ -27,7 +27,7 @@ function onClick(index) {
 </head>
 
 <body>
-<input type="search" id="query" width="100%" />
+<input type="search" id="query" results="5" autosave="something-something" placeholder="Search..." width="100%" />
 [%- FOR plugin IN plugins %]
 <button onclick="onClick([% loop.index %])">[% plugin.name %]</button>
 [%- END -%]
