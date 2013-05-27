@@ -19,8 +19,9 @@ var template = [
 
 function onClick(index) {
     var query = encodeURIComponent(document.getElementById('query').value);
-    var uri = template[index].replace(/{searchTerms}/g, query);
-    document.location = uri;
+    if (query.length > 0) {
+        document.location = template[index].replace(/{searchTerms}/g, query);
+    }
 }
 
 </script>
@@ -29,7 +30,7 @@ function onClick(index) {
 <body>
 <input type="search" id="query" results="5" autosave="something-something" placeholder="Search..." width="100%" />
 [%- FOR plugin IN plugins %]
-<button onclick="onClick([% loop.index %])">[% plugin.name %]</button>
-[%- END -%]
+<div class="engine" onclick="onClick([% loop.index %])">[% plugin.name %]</div>
+[%- END %]
 </body>
 </html>
