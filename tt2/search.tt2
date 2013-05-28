@@ -6,24 +6,18 @@
 <style>
 
 [%- PERL -%]
-use YAML::Tiny;
-$stash->set(plugins => YAML::Tiny::LoadFile('plugins.yaml'));
+use YAML;
+$stash->set(plugins => YAML::LoadFile('plugins.yaml'));
 [%- END -%]
 [% INCLUDE tmp/style.css -%]
 
 </style>
 <script type="text/javascript">
 
-var template = [
-[%- FOR plugin IN plugins %]
-    "[% plugin.url %]",
-[%- END %]
-];
-
-function onClick(index) {
+function onClick(url) {
     var query = encodeURIComponent(document.getElementById('query').value);
     if (query.length > 0) {
-        document.location = template[index].replace(/{searchTerms}/g, query);
+        document.location = url.replace(/{searchTerms}/g, query);
     }
 }
 
@@ -31,10 +25,10 @@ function onClick(index) {
 </head>
 
 <body>
-<input type="search" id="query" results="5" autosave="something-something" placeholder="Search..." width="100%" />
+<input type="search" id="query" results="5" autosave="baker" placeholder="Search..." width="100%" />
 [%- FOR plugin IN plugins %]
 <span class="engine [% loop.parity %]">
-    <a href="javascript:onClick([% loop.index %])">[% plugin.name %]</a>
+    <a href="javascript:onClick('[% plugin.url | html %]')">[% plugin.name %]</a>
 </span>
 [%- END %]
 </body>
