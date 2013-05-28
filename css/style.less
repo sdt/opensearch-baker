@@ -35,18 +35,34 @@ button {
     padding: 0;
 }
 
-div.engine {
-    width: 100%;
+span.engine {
+    width: 50%;
     height: 50px;
     line-height: 50px;
 
+    border-width: 1px;
+    border-color: @base0;
+
     border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: grey;
+
+    text-align: center;
+}
+
+span.odd {
+    float: left;
+    a {
+        border-right-style: solid;
+        border-right-width: 1px;
+    }
+}
+
+span.even {
+    float: right;
 }
 
 a {
     padding-left: 8px;
+    padding-right: 8px;
     display: block;
     text-decoration: none;
     color: @base0;

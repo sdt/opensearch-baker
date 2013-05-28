@@ -33,9 +33,9 @@ function onClick(index) {
 <body>
 <input type="search" id="query" results="5" autosave="something-something" placeholder="Search..." width="100%" />
 [%- FOR plugin IN plugins %]
-<div class="engine">
+<span class="engine [% loop.parity %]">
     <a href="javascript:onClick([% loop.index %])">[% plugin.name %]</a>
-</div>
+</span>
 [%- END %]
 </body>
 </html>
