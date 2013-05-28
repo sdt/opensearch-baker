@@ -5,6 +5,7 @@ use warnings;
 use JSON qw( encode_json );
 use Method::Signatures;
 use XML::Simple qw( XMLin );
+use YAML::Tiny qw( );
 
 exit main(@ARGV);
 
@@ -38,10 +39,15 @@ func dump_json($plugins) {
     print encode_json($plugins);
 }
 
+func dump_yaml($plugins) {
+    print YAML::Tiny::Dump($plugins);
+}
+
 func main(@filenames) {
     my @plugins = map { load_xml($_) } @filenames;
     #dump_json(\@plugins);
-    dump_tt2(\@plugins);
+    #dump_tt2(\@plugins);
+    dump_yaml(\@plugins);
     return 0;
 }
 
