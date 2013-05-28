@@ -1,0 +1,13 @@
+---
+-
+  name: DuckDuckGo
+  url: https://duckduckgo.com/?q={searchTerms}&kp=-1&kl=au-en&kh=1
+-
+  name: eBay
+  url: http://search.ebay.com.au/search/search.dll?satitle={searchTerms}
+-
+  name: Google
+  url: https://encrypted.google.com/search?hl=en&gl=au&safe=off&q={searchTerms}&btnG=Search&aq=f&aqi=&aql=&oq={searchTerms}&gs_rfai=
+-
+  name: TMDb
+  url: http://www.themoviedb.org/search?query={searchTerms}

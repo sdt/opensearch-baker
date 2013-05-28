@@ -1,4 +1,3 @@
-[%- PROCESS tmp/plugins.tt2 -%]
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +5,10 @@
 <title>Search</title>
 <style>
 
+[%- PERL -%]
+use YAML::Tiny;
+$stash->set(plugins => YAML::Tiny::LoadFile('plugins.yaml'));
+[%- END -%]
 [% INCLUDE tmp/style.css -%]
 
 </style>
